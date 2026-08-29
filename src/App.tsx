@@ -9,8 +9,13 @@ function App() {
   let targetDate: Date | null = null;
 
   if (dateParameter) {
-      const [year, month, day] = dateParameter.split("-").map(Number);
-      targetDate = new Date(year, month - 1, day);
+    const [year, month, day] = dateParameter.split("-").map(Number);
+    const target = new Date(year, month - 1, day);
+    targetDate = isNaN(target.getTime()) 
+      || target.getFullYear() !== year 
+      || target.getMonth() !== month - 1 
+      || target.getDate() !== day 
+      ? null : target;
   }
 
 
