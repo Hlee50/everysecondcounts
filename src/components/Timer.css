@@ -1,0 +1,18 @@
+.digits {
+    font-family: 'Seven Segment';
+    color: rgb(0, 190, 255);
+    font-size: 20vw;
+    text-shadow: 0 0 5px rgb(0, 190, 255), 0 0 30px rgba(0, 190, 255, 0.5);
+}
+
+.digit {
+    display: inline-block;
+    width: 0.5em;
+    text-align: right;
+}
+
+.colon {
+    font-family: sans-serif;
+    font-size: 10vw;
+    vertical-align: 0.4em;
+}
