@@ -1,32 +1,37 @@
 import { useState } from 'react'
+import { DatePicker } from './components/DatePicker'
 import { Timer } from './components/Timer'
 import { Sign } from './components/Sign'
 import './App.css'
 
 function App() {
-  const [timeUntil, setTimeUntil] = useState(0);
-  const dateParameter = new URLSearchParams(window.location.search).get("date");
-  let targetDate: Date | null = null;
+  const dateParam = new URLSearchParams(window.location.search).get('date');
+  const today = new Date();
+  let parsedDate: Date = today;
+  
 
-  if (dateParameter) {
-    const [year, month, day] = dateParameter.split("-").map(Number);
-    const target = new Date(year, month - 1, day);
-    targetDate = isNaN(target.getTime()) 
-      || target.getFullYear() !== year 
-      || target.getMonth() !== month - 1 
-      || target.getDate() !== day 
-      ? null : target;
+  if (dateParam) {
+    const [year, month, day] = dateParam.split('-').map(Number);
+    const date = new Date(year, month - 1, day);
+    parsedDate = isNaN(date.getTime())
+      || date.getFullYear() !== year 
+      || date.getMonth() !== month - 1 
+      || date.getDate() !== day 
+      || date > new Date(today.getFullYear() + 10, today.getMonth(), today.getDate())
+      ? today : date;
   }
 
+  const [selectedDate, setSelectedDate] = useState<Date>(parsedDate);
 
   return (
     <>
-      <div className='timer-container'>
-        <Timer timeUntil={timeUntil} setTimeUntil={setTimeUntil} targetDate={targetDate}/>
+      <DatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate}/>
+      <div className="timer-container">
+        <Timer countdownDate={selectedDate}/>
         <Sign />
       </div>
     </>
-  )
+  );
 }
 
 export default App
