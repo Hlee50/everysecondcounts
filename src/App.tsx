@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { DatePicker } from './components/DatePicker'
 import { Timer } from './components/Timer'
 import { Sign } from './components/Sign'
+import copy from "./assets/images/iconmonstr-copy-lined.svg"
+import check from "./assets/images/iconmonstr-check-mark-lined.svg"
 import './App.css'
 
 function App() {
@@ -22,9 +24,23 @@ function App() {
   }
 
   const [selectedDate, setSelectedDate] = useState<Date>(parsedDate);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
+    } catch (error) {
+      console.error("Failed to copy link:", error);
+    }
+  };
 
   return (
     <>
+      <button className="copy-button" onClick={handleCopy} aria-label={copied ? "Copied" : "Copy"} title={copied ? "Link copied" : "Copy link"}>
+        <img src={copied ? check : copy} alt="" />
+      </button>
       <DatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate}/>
       <div className="timer-container">
         <Timer countdownDate={selectedDate}/>

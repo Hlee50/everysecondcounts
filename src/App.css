@@ -6,3 +6,26 @@
     min-height: 100dvh;
     gap: 3rem;
 }
+
+.copy-button {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background: transparent;
+    position: absolute;
+    top: 1rem;
+    right: 10.5rem;
+    width: 2.36rem;
+    height: 2.36rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.copy-button:hover {
+    background-color: rgba(30, 144, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.copy-button:active {
+    background-color: rgba(30, 144, 255, 0.2);
+}
