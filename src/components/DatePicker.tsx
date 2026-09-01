@@ -8,6 +8,10 @@ interface DatePickerProps {
 }
 
 export function DatePicker({ selectedDate, setSelectedDate }: DatePickerProps) {
+    const minDate = new Date();
+    const maxDate = new Date();
+    maxDate.setFullYear(maxDate.getFullYear() + 10);
+
     const handleChange = (date: Date | null) => {
         if (!date) return;
         date.setHours(0, 0, 0, 0);
@@ -20,7 +24,13 @@ export function DatePicker({ selectedDate, setSelectedDate }: DatePickerProps) {
 
     return (
         <>
-            <ReactDatePicker selected={selectedDate} onChange={handleChange} popperPlacement="bottom-start" />
+            <ReactDatePicker 
+                selected={selectedDate} 
+                onChange={handleChange}
+                minDate={minDate}
+                maxDate={maxDate}
+                popperPlacement="bottom-start" 
+            />
         </>
     );
 }
