@@ -10,6 +10,7 @@ interface DatePickerProps {
 export function DatePicker({ selectedDate, setSelectedDate }: DatePickerProps) {
     const handleChange = (date: Date | null) => {
         if (!date) return;
+        date.setHours(0, 0, 0, 0);
         setSelectedDate(date);
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
