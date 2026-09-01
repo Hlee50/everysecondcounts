@@ -7,6 +7,14 @@
     gap: 3rem;
 }
 
+.github-icon {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
 .copy-button {
     display: flex;
     align-items: center;

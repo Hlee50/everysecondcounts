@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { DatePicker } from './components/DatePicker'
 import { Timer } from './components/Timer'
 import { Sign } from './components/Sign'
+import github from "./assets/images/iconmonstr-github-1.svg"
 import copy from "./assets/images/iconmonstr-copy-lined.svg"
 import check from "./assets/images/iconmonstr-check-mark-lined.svg"
 import './App.css'
@@ -38,6 +39,9 @@ function App() {
 
   return (
     <>
+      <a href="https://github.com/Hlee50/everysecondcounts" target="_blank" rel="noopener noreferrer">
+        <img src={github} className="github-icon"/>
+      </a>
       <button className="copy-button" onClick={handleCopy} aria-label={copied ? "Copied" : "Copy"} title={copied ? "Link copied" : "Copy link"}>
         <img src={copied ? check : copy} alt="" />
       </button>
