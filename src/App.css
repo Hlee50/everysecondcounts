@@ -1,4 +1,4 @@
-.timer-container{
+.timer-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,11 +29,32 @@
     border-radius: 5px;
 }
 
-.copy-button:hover {
-    background-color: rgba(30, 144, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+@media (hover: hover) {
+    .copy-button:hover {
+        background-color: rgba(30, 144, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
 }
 
 .copy-button:active {
     background-color: rgba(30, 144, 255, 0.2);
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .timer-container {
+        gap: 1rem;
+    }
+
+    .copy-button {
+        right: 42vw;
+    }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+    .timer-container {
+        gap: 1rem;
+    }
+    .copy-button {
+        right: 22vw;
+    }
 }

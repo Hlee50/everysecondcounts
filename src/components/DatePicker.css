@@ -52,3 +52,25 @@
     background-color: rgba(30, 144, 255, 0.6) !important;
 }
 
+@media (hover: none) {
+    .react-datepicker__day:hover {
+        background-color: transparent !important;
+    }
+
+    .react-datepicker__day--selected:hover {
+        background-color: rgba(30, 144, 255, 0.5) !important;
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .react-datepicker__input-container input {
+        width: 30vw;
+    }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+    .react-datepicker__input-container input {
+        width: 16vw;
+    }
+}
+
