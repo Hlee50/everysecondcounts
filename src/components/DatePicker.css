@@ -1,14 +1,14 @@
 .react-datepicker-wrapper {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
 }
 
 .react-datepicker__input-container input {
     background-color: rgba(30, 144, 255, 0.1);
     color: rgba(255, 255, 255, 0.9);
     height: 2rem;
-    width: 8vw;
+    width: 8rem;
     font-size: 100%;
     padding-left: 5%;
     border: 2px solid transparent;
@@ -61,16 +61,3 @@
         background-color: rgba(30, 144, 255, 0.5) !important;
     }
 }
-
-@media (max-width: 768px) and (orientation: portrait) {
-    .react-datepicker__input-container input {
-        width: 30vw;
-    }
-}
-
-@media (max-height: 480px) and (orientation: landscape) {
-    .react-datepicker__input-container input {
-        width: 16vw;
-    }
-}
-

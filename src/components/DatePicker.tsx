@@ -1,5 +1,5 @@
-import ReactDatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import ReactDatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
 import './DatePicker.css'
 
 interface DatePickerProps {
@@ -29,7 +29,7 @@ export function DatePicker({ selectedDate, setSelectedDate }: DatePickerProps) {
                 onChange={handleChange}
                 minDate={minDate}
                 maxDate={maxDate}
-                popperPlacement="bottom-start" 
+                popperPlacement="bottom-start"
             />
         </>
     );

@@ -18,11 +18,11 @@
 .copy-button {
     display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     background: transparent;
     position: absolute;
     top: 1rem;
-    right: 10.5rem;
+    right: 10.75rem;
     width: 2.36rem;
     height: 2.36rem;
     border: 2px solid transparent;
@@ -40,21 +40,9 @@
     background-color: rgba(30, 144, 255, 0.2);
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 768px) and (orientation: portrait),
+       (max-height: 480px) and (orientation: landscape) {
     .timer-container {
         gap: 1rem;
-    }
-
-    .copy-button {
-        right: 42vw;
-    }
-}
-
-@media (max-height: 480px) and (orientation: landscape) {
-    .timer-container {
-        gap: 1rem;
-    }
-    .copy-button {
-        right: 22vw;
     }
 }
