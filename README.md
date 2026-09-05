@@ -16,5 +16,5 @@ Add a `date` parameter to the URL to set the date directly in `YYYY-MM-DD` forma
 https://everysecondcountstimer.vercel.app/?date=2027-06-25
 ```
 <br>
-The timer's link can be copied and shared.
+Copy the timer's link to save or share your countdown.
 
